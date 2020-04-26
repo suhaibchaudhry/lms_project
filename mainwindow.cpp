@@ -2,14 +2,14 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <iostream>
-#include <fstream>
 #include <string>
+#include <QFile>
+#include <QDebug>
 
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    //setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     this->setFixedSize(QSize(325, 125));
 }
 
@@ -18,24 +18,30 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_loginButton_clicked() {
-    ifstream myFile("/Users/chaud/Google Drive/School/CS3321/team_project/lms_project/auth.dat");
     QString username = ui->username_text->text();
     QString password = ui->password_text->text();
-    string user_auth;
-    string pass_auth;
 
-    if(myFile) {
-        getline(myFile, user_auth);
-        getline(myFile, pass_auth);
-    } else {
+    QString user_auth;
+    QString pass_auth;
+
+    QFile myFile(":/auth/resources/student_auth.dat");
+
+    if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "Authentication File Not Found");
+    } else {
+        while(!myFile.atEnd()) {
+            user_auth = myFile.readLine();
+            user_auth = user_auth.trimmed();
+            qDebug() << username;
+            qDebug() << user_auth;
+            pass_auth = myFile.readLine();
+            pass_auth = pass_auth.trimmed();
+            qDebug() << password;
+            qDebug() << pass_auth;
+        }
     }
 
-    QString user = QString::fromStdString(user_auth);
-    QString pass = QString::fromStdString(pass_auth);
-
-    if(username == user && password == pass) {
-        //QMessageBox::information(this, "Login", "Username and password are correct!");
+    if(username == user_auth && password == pass_auth) {
         hide();
         stud_dboard = new student_dashboard(this);
         stud_dboard->show();
