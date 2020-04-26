@@ -10,7 +10,7 @@ using namespace std;
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     //setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
-    this->setFixedSize(QSize(350, 150));
+    this->setFixedSize(QSize(325, 125));
 }
 
 MainWindow::~MainWindow() {
