@@ -35,7 +35,10 @@ void MainWindow::on_loginButton_clicked() {
     QString pass = QString::fromStdString(pass_auth);
 
     if(username == user && password == pass) {
-        QMessageBox::information(this, "Login", "Username and password are correct!");
+        //QMessageBox::information(this, "Login", "Username and password are correct!");
+        hide();
+        stud_dboard = new student_dashboard(this);
+        stud_dboard->show();
     } else {
         QMessageBox::information(this, "Login", "Username and password are wrong!");
     }

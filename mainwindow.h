@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "student_dashboard.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,5 +22,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    student_dashboard *stud_dboard;
 };
 #endif // MAINWINDOW_H
