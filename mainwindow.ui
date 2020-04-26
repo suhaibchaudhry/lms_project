@@ -120,5 +120,21 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>password_text</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>255</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

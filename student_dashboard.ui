@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>student_dashboard</class>
- <widget name="student_dashboard" class="QDialog">
+ <widget class="QDialog" name="student_dashboard">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>890</width>
+    <height>458</height>
    </rect>
   </property>
   <property name="windowTitle">
