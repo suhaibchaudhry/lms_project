@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/auth">
+        <file>resources/student_auth.dat</file>
+    </qresource>
+</RCC>
