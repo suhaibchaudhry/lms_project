@@ -9,12 +9,12 @@ student_dashboard::student_dashboard(QWidget *parent) :
 
     model = new QStringListModel(this);
 
-    QStringList list;
-    list << "CS1436" << "CS1437" << "CS2425" << "CS2436" << "CS1408" <<
-            "CS2301" << "CS2302" << "CS3306" << "CS3310" << "CS3321" <<
-            "CS4300" << "CS4315" << "CS4318";
+    QStringList studentList;
+    //studentList << "CS1436" << "CS1437" << "CS2425" << "CS2436" << "CS1408" <<
+    //        "CS2301" << "CS2302" << "CS3306" << "CS3310" << "CS3321" <<
+    //        "CS4300" << "CS4315" << "CS4318";
 
-    model->setStringList(list);
+    model->setStringList(studentList);
 
     ui->listView->setModel(model);
 
