@@ -16,15 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    faculty_dashboard.cpp \
     main.cpp \
     mainwindow.cpp \
     student_dashboard.cpp
 
 HEADERS += \
+    faculty_dashboard.h \
     mainwindow.h \
     student_dashboard.h
 
 FORMS += \
+    faculty_dashboard.ui \
     mainwindow.ui \
     student_dashboard.ui
 
