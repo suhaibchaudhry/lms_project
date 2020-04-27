@@ -41,8 +41,8 @@ void MainWindow::on_loginButton_clicked() {
                 fac_auth = fac_auth.trimmed();
                 qDebug() << username;
                 qDebug() << fac_auth;
-                pass_auth = Fac.readLine();
-                pass_auth = facpass_auth.trimmed();
+                facpass_auth = Fac.readLine();
+                facpass_auth = facpass_auth.trimmed();
                 qDebug() << password;
                 qDebug() << facpass_auth;
             }
