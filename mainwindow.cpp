@@ -39,12 +39,8 @@ void MainWindow::on_loginButton_clicked() {
             while(!Fac.atEnd()) {
                 fac_auth = Fac.readLine();
                 fac_auth = fac_auth.trimmed();
-                qDebug() << username;
-                qDebug() << fac_auth;
                 facpass_auth = Fac.readLine();
                 facpass_auth = facpass_auth.trimmed();
-                qDebug() << password;
-                qDebug() << facpass_auth;
             }
         }
     } else if(user_check == "Student") {
@@ -54,12 +50,8 @@ void MainWindow::on_loginButton_clicked() {
             while(!myFile.atEnd()) {
                 user_auth = myFile.readLine();
                 user_auth = user_auth.trimmed();
-                qDebug() << username;
-                qDebug() << user_auth;
                 pass_auth = myFile.readLine();
                 pass_auth = pass_auth.trimmed();
-                qDebug() << password;
-                qDebug() << pass_auth;
             }
         }
     }
