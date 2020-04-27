@@ -10,7 +10,7 @@ using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    this->setFixedSize(QSize(325, 125));
+    this->setFixedSize(QSize(325, 140));
 }
 
 MainWindow::~MainWindow() {
@@ -27,30 +27,40 @@ void MainWindow::on_loginButton_clicked() {
     QString facpass_auth;
 
     QFile myFile(":/auth/resources/student_auth.dat");
-    QFile Fac(":/auth/resources/teacher_auth.txt");
+    QFile Fac(":/auth/resources/teacher_auth.dat");
 
-    if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", "Authentication File Not Found");
-    } else {
-        while(!myFile.atEnd()) {
-            user_auth = myFile.readLine();
-            user_auth = user_auth.trimmed();
-            qDebug() << username;
-            qDebug() << user_auth;
-            pass_auth = myFile.readLine();
-            pass_auth = pass_auth.trimmed();
-            qDebug() << password;
-            qDebug() << pass_auth;
+    QString user_check = ui->comboBox->currentText();
+
+
+    if(user_check == "Teacher") {
+        if(!Fac.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QMessageBox::critical(this, "Error", "Authentication File Not Found");
+        } else {
+            while(!Fac.atEnd()) {
+                fac_auth = Fac.readLine();
+                fac_auth = fac_auth.trimmed();
+                qDebug() << username;
+                qDebug() << fac_auth;
+                pass_auth = Fac.readLine();
+                pass_auth = facpass_auth.trimmed();
+                qDebug() << password;
+                qDebug() << facpass_auth;
+            }
         }
-        while(!Fac.atEnd()) {
-            fac_auth = Fac.readLine();
-            fac_auth = fac_auth.trimmed();
-            qDebug() << username;
-            qDebug() << fac_auth;
-            pass_auth = Fac.readLine();
-            pass_auth = facpass_auth.trimmed();
-            qDebug() << password;
-            qDebug() << facpass_auth;
+    } else if(user_check == "Student") {
+        if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QMessageBox::critical(this, "Error", "Authentication File Not Found");
+        } else {
+            while(!myFile.atEnd()) {
+                user_auth = myFile.readLine();
+                user_auth = user_auth.trimmed();
+                qDebug() << username;
+                qDebug() << user_auth;
+                pass_auth = myFile.readLine();
+                pass_auth = pass_auth.trimmed();
+                qDebug() << password;
+                qDebug() << pass_auth;
+            }
         }
     }
 

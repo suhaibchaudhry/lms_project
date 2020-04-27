@@ -7,20 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>333</width>
-    <height>138</height>
+    <height>167</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>UHD LMS</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>298</width>
-      <height>85</height>
+      <height>111</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -65,6 +65,25 @@
            </layout>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <item>
+           <property name="text">
+            <string>Teacher</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Student</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Admin</string>
+           </property>
+          </item>
+         </widget>
         </item>
        </layout>
       </widget>
