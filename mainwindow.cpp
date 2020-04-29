@@ -5,8 +5,6 @@
 #include <QFile>
 #include <QDebug>
 
-using namespace std;
-
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     this->setFixedSize(QSize(325, 140));

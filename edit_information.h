@@ -7,7 +7,7 @@ namespace Ui {
 class edit_information;
 }
 
-class edit_information : public QDialog
+class edit_information:public QDialog
 {
     Q_OBJECT
 

@@ -50,7 +50,6 @@ edit_information::edit_information(QWidget *parent):QDialog(parent), ui(new Ui::
 
 void edit_information::on_pushButton_clicked() {
     QString filename = curr_path + user_id + "_info.dat";
-
     QFile myFile(filename);
 
     myFile.open(QIODevice::ReadWrite | QIODevice::Text);
