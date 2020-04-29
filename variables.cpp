@@ -2,3 +2,4 @@
 #include <QString>
 
 QString user_id = "";
+QString curr_path = "";

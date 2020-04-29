@@ -2,8 +2,6 @@
 #include "ui_mainwindow.h"
 #include "variables.h"
 #include <QMessageBox>
-#include <iostream>
-#include <string>
 #include <QFile>
 #include <QDebug>
 
@@ -12,6 +10,8 @@ using namespace std;
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     this->setFixedSize(QSize(325, 140));
+    QDir::setCurrent(QStringLiteral("../lms_project/resources/"));
+    curr_path = QDir::currentPath() + "/";
 }
 
 MainWindow::~MainWindow() {
@@ -27,8 +27,7 @@ void MainWindow::on_loginButton_clicked() {
     QString fac_auth;
     QString facpass_auth;
 
-    QString filename = ":/auth/resources/" + username + "_auth.dat";
-    qDebug() << filename;
+    QString filename = curr_path + username + "_auth.dat";
     QFile myFile(filename);
 
     QString user_check = ui->comboBox->currentText();
