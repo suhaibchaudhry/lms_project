@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "variables.h"
 #include <QMessageBox>
 #include <iostream>
 #include <string>
@@ -26,48 +27,34 @@ void MainWindow::on_loginButton_clicked() {
     QString fac_auth;
     QString facpass_auth;
 
-    QFile myFile(":/auth/resources/student_auth.dat");
-    QFile Fac(":/auth/resources/teacher_auth.dat");
+    QString filename = ":/auth/resources/" + username + "_auth.dat";
+    qDebug() << filename;
+    QFile myFile(filename);
 
     QString user_check = ui->comboBox->currentText();
 
-
-    if(user_check == "Teacher") {
-        if(!Fac.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QMessageBox::critical(this, "Error", "Authentication File Not Found");
-        } else {
-            while(!Fac.atEnd()) {
-                fac_auth = Fac.readLine();
-                fac_auth = fac_auth.trimmed();
-                facpass_auth = Fac.readLine();
-                facpass_auth = facpass_auth.trimmed();
-            }
-        }
-    } else if(user_check == "Student") {
-        if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QMessageBox::critical(this, "Error", "Authentication File Not Found");
-        } else {
-            while(!myFile.atEnd()) {
-                user_auth = myFile.readLine();
-                user_auth = user_auth.trimmed();
-                pass_auth = myFile.readLine();
-                pass_auth = pass_auth.trimmed();
-            }
+    if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "Authentication File Not Found");
+    } else {
+        while(!myFile.atEnd()) {
+            user_auth = myFile.readLine();
+            user_auth = user_auth.trimmed();
+            pass_auth = myFile.readLine();
+            pass_auth = pass_auth.trimmed();
         }
     }
 
     if(username == user_auth && password == pass_auth) {
+        user_id = username;
         hide();
-        stud_dboard = new student_dashboard(this);
-        stud_dboard->show();
-    }
-    else if(username == fac_auth && password == facpass_auth)
-    {
-        hide();
-        fac_dboard = new faculty_dashboard(this);
-        fac_dboard->show();;
-    }
-    else {
+        if(user_check == "Student") {
+            stud_dboard = new student_dashboard(this);
+            stud_dboard->show();
+        } else if(user_check == "Teacher") {
+            fac_dboard = new faculty_dashboard(this);
+            fac_dboard->show();
+        }
+    } else {
         QMessageBox::information(this, "Login", "Username and password are wrong!");
     }
 }
