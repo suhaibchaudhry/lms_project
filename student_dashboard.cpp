@@ -6,6 +6,7 @@ student_dashboard::student_dashboard(QWidget *parent) :
     ui(new Ui::student_dashboard)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(860, 460));
 
     model = new QStringListModel(this);
 
