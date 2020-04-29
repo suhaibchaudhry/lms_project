@@ -19,12 +19,14 @@ SOURCES += \
     faculty_dashboard.cpp \
     main.cpp \
     mainwindow.cpp \
-    student_dashboard.cpp
+    student_dashboard.cpp \
+    variables.cpp
 
 HEADERS += \
     faculty_dashboard.h \
     mainwindow.h \
-    student_dashboard.h
+    student_dashboard.h \
+    variables.h
 
 FORMS += \
     faculty_dashboard.ui \
