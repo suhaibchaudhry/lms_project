@@ -26,28 +26,27 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     } else {
         QTextStream stream(&myFile);
         QString line = stream.readLine();
-
         ui->firstName->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->lastName->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->address->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->city->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->state->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->zip->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->dob->setText(line);
-        line = stream.readLine();
 
+        line = stream.readLine();
         ui->phone->setText(line);
     }
 
