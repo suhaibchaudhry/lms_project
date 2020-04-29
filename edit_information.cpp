@@ -13,14 +13,19 @@
 edit_information::edit_information(QWidget *parent):QDialog(parent), ui(new Ui::edit_information) {
     ui->setupUi(this);
 
+    //set file for student info
     QString filename = curr_path + user_id + "_info.dat";
     QFile myFile(filename);
 
+    //open student info as file as read only
     if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "User Not Found");
     } else {
+        //start reading line by line and set the variable line to next line from file
         QTextStream stream(&myFile);
         QString line = stream.readLine();
+
+        //set the element placeholdertext to the line variable
         ui->firstName->setPlaceholderText(line);
 
         line = stream.readLine();
@@ -52,11 +57,14 @@ void edit_information::on_pushButton_clicked() {
     QString filename = curr_path + user_id + "_info.dat";
     QFile myFile(filename);
 
+    //open file as readable and writable
     myFile.open(QIODevice::ReadWrite | QIODevice::Text);
 
+    //create new qbytearray to store filedata and store it as a qstring called text
     QByteArray fileData = myFile.readAll();
     QString text(fileData);
 
+    //declare user inputted variables
     QString user_fname;
     QString user_lname;
     QString user_address;
@@ -66,6 +74,7 @@ void edit_information::on_pushButton_clicked() {
     QString user_dob;
     QString user_phone;
 
+    //set read pointer to beginning of file
     myFile.seek(0);
     QTextStream stream(&myFile);
 
@@ -93,11 +102,18 @@ void edit_information::on_pushButton_clicked() {
     line = stream.readLine();
     user_phone = line;
 
+    //checks if the label is empty
+    //if label is not empty, sets variable to the user inputted text
+    //and writes it to file
     if(ui->firstName->text() != "") {
         QString fname = ui->firstName->text();
+
+        //replaces user_fname with fname
         text.replace(QRegularExpression(user_fname), QString(fname));
 
         myFile.seek(0);
+
+        //writes to file as a qbytearray (.toUtf8() converts to qbytearray)
         myFile.write(text.toUtf8());
     }
 
@@ -160,6 +176,8 @@ void edit_information::on_pushButton_clicked() {
     myFile.close();
 
     hide();
+
+    //starts new instance of student dashboard with updated information
     student_dashboard *stud_dboard = new student_dashboard(this);
     stud_dboard->show();
 }
@@ -170,6 +188,8 @@ edit_information::~edit_information() {
 
 void edit_information::on_pushButton_2_clicked() {
     hide();
+
+    //starts new instance of student dashboard without information change
     student_dashboard *stud_dboard = new student_dashboard(this);
     stud_dboard->show();
 }

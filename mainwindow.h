@@ -24,6 +24,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    //declares new instances of various windows to be used
     student_dashboard *stud_dboard;
     faculty_dashboard *fac_dboard;
     edit_information *edit_info;
