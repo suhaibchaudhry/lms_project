@@ -6,8 +6,7 @@ namespace Ui {
 class faculty_dashboard;
 }
 
-class faculty_dashboard : public QDialog
-{
+class faculty_dashboard:public QDialog {
     Q_OBJECT
 
 public:
