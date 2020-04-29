@@ -15,6 +15,11 @@ public:
     explicit edit_information(QWidget *parent = nullptr);
     ~edit_information();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::edit_information *ui;
 };
