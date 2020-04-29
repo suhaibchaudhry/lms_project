@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "student_dashboard.h"
 #include "faculty_dashboard.h"
+#include "edit_information.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,5 +26,6 @@ private:
     Ui::MainWindow *ui;
     student_dashboard *stud_dboard;
     faculty_dashboard *fac_dboard;
+    edit_information *edit_info;
 };
 #endif // MAINWINDOW_H
