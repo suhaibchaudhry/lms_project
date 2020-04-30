@@ -13,7 +13,24 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     //creates a new model
     model = new QStringListModel(this);
     QStringList studentList;
+
+    QString courseList = curr_path + "courseList.dat";
+    qDebug() << courseList;
+    QFile courses(courseList);
+
+    if(!courses.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "User Not Found");
+    } else {
+        QString line;
+
+        while(!courses.atEnd()) {
+            line = courses.readLine().trimmed();
+            studentList << line;
+        }
+    }
+
     model->setStringList(studentList);
+    courses.close();
 
     //sets the ui listview to the model
     ui->listView->setModel(model);
