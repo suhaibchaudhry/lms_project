@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "variables.h"
 #include <QMessageBox>
+#include <QDebug>
 
 student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui::student_dashboard) {
     ui->setupUi(this);
@@ -11,9 +12,14 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     this->setFixedSize(QSize(860, 460));
 
     //creates a new model
+
     model = new QStringListModel(this);
-    QStringList studentList;
     model->setStringList(studentList);
+
+
+    //for (int i = 0; i < studentList.size(); ++i)
+    //         qDebug() << studentList.at(i).toLocal8Bit().constData() << Qt::endl;
+
 
     //sets the ui listview to the model
     ui->listView->setModel(model);
@@ -25,7 +31,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     QString filename = curr_path + user_id + "_info.dat";
     QFile myFile(filename);
 
-    //opens file in readonly mode
+    //opens file in read-only mode
     if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "User Not Found");
     } else {
@@ -72,12 +78,14 @@ void student_dashboard::on_pushButton_3_clicked() {
     QModelIndex index = model->index(row);
 
     ui->listView->setCurrentIndex(index);
+
     ui->listView->edit(index);
 }
 
 void student_dashboard::on_pushButton_2_clicked() {
     //delete selected course
     model->removeRows(ui->listView->currentIndex().row(), 1);
+
 }
 
 void student_dashboard::on_pushButton_4_clicked() {
@@ -85,4 +93,5 @@ void student_dashboard::on_pushButton_4_clicked() {
      hide();
      edit_info = new edit_information(this);
      edit_info->show();
+
 }

@@ -29,6 +29,9 @@ private:
 
     //declared a new model for use in the student dashboard
     QStringListModel *model;
+    QStringList studentList;
+
+
 
     //declared a new instance of the edit_information window
     edit_information *edit_info;
