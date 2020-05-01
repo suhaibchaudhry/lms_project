@@ -1,17 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>student_course</class>
- <widget name="student_course" class="QDialog">
+ <widget class="QDialog" name="student_course">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>696</width>
+    <height>419</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="courseName">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>10</y>
+     <width>341</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>CourseName</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>150</y>
+     <width>191</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string>assignment 1</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>assignment 2</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>grade</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>90</string>
+    </property>
+   </item>
+   <item row="17" column="0">
+    <property name="text">
+     <string>30</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>150</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -2,6 +2,9 @@
 #define STUDENT_COURSE_H
 
 #include <QDialog>
+#include <QApplication>
+#include <QSqlTableModel>
+#include <QTableView>
 
 namespace Ui {
 class student_course;
@@ -17,6 +20,7 @@ public:
 
 private:
     Ui::student_course *ui;
+    QSqlTableModel *model;
 };
 
 #endif // STUDENT_COURSE_H
