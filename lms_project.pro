@@ -20,6 +20,7 @@ SOURCES += \
     faculty_dashboard.cpp \
     main.cpp \
     mainwindow.cpp \
+    student_add_classes.cpp \
     student_course.cpp \
     student_dashboard.cpp \
     variables.cpp
@@ -28,6 +29,7 @@ HEADERS += \
     edit_information.h \
     faculty_dashboard.h \
     mainwindow.h \
+    student_add_classes.h \
     student_course.h \
     student_dashboard.h \
     variables.h
@@ -36,6 +38,7 @@ FORMS += \
     edit_information.ui \
     faculty_dashboard.ui \
     mainwindow.ui \
+    student_add_classes.ui \
     student_course.ui \
     student_dashboard.ui
 
