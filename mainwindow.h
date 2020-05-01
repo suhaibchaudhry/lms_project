@@ -29,5 +29,6 @@ private:
     student_dashboard *stud_dboard;
     faculty_dashboard *fac_dboard;
     edit_information *edit_info;
+    student_course *stud_course;
 };
 #endif // MAINWINDOW_H

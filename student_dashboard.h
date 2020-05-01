@@ -5,6 +5,7 @@
 #include <QtGui>
 #include <QDialog>
 #include "edit_information.h"
+#include "student_course.h"
 
 namespace Ui {
 class student_dashboard;
@@ -24,6 +25,10 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_listView_clicked(const QModelIndex &index);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::student_dashboard *ui;
 
@@ -32,6 +37,7 @@ private:
 
     //declared a new instance of the edit_information window
     edit_information *edit_info;
+    student_course *stud_course;
 };
 
 #endif // STUDENT_DASHBOARD_H

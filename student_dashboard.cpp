@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "variables.h"
 #include <QMessageBox>
+#include <QModelIndex>
 
 student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui::student_dashboard) {
     ui->setupUi(this);
@@ -14,7 +15,8 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     model = new QStringListModel(this);
     QStringList studentList;
 
-    QString courseList = curr_path + "courseList.dat";
+    //sets the current course list for the student
+    QString courseList = curr_path + user_id + "_courses.dat";
     qDebug() << courseList;
     QFile courses(courseList);
 
@@ -102,4 +104,22 @@ void student_dashboard::on_pushButton_4_clicked() {
      hide();
      edit_info = new edit_information(this);
      edit_info->show();
+}
+
+void student_dashboard::on_listView_clicked(const QModelIndex &index) {
+    QModelIndex listIndex = ui->listView->currentIndex();
+    student_selectedCourse = listIndex.data(Qt::DisplayRole).toString();
+
+    qDebug() << student_selectedCourse;
+}
+
+void student_dashboard::on_pushButton_clicked()
+{
+    if(student_selectedCourse == "") {
+        QMessageBox::critical(this, "Error", "Please select a course.");
+    } else {
+        hide();
+        stud_course = new student_course(this);
+        stud_course->show();
+    }
 }
