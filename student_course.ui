@@ -6,158 +6,120 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
-    <height>419</height>
+    <width>294</width>
+    <height>477</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="courseName">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>10</y>
-     <width>341</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>24</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CourseName</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>150</y>
-     <width>191</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <row>
-    <property name="text">
-     <string>assignment 1</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>New Row</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>assignment 2</string>
-    </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>grade</string>
-    </property>
-   </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string>90</string>
-    </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLabel" name="courseName">
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CourseName</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </item>
-   <item row="17" column="0">
-    <property name="text">
-     <string>30</string>
-    </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="showGrid">
+         <bool>false</bool>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::NoPen</enum>
+        </property>
+        <row>
+         <property name="text">
+          <string>Homework 1</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Grade</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+         <property name="flags">
+          <set>ItemIsEnabled</set>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Current Grade:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="curr_grade">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>grade</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Close</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>150</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-  </widget>
+  </layout>
  </widget>
  <resources/>
  <connections/>

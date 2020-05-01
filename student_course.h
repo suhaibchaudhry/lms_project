@@ -3,8 +3,6 @@
 
 #include <QDialog>
 #include <QApplication>
-#include <QSqlTableModel>
-#include <QTableView>
 
 namespace Ui {
 class student_course;
@@ -18,9 +16,11 @@ public:
     explicit student_course(QWidget *parent = nullptr);
     ~student_course();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::student_course *ui;
-    QSqlTableModel *model;
 };
 
 #endif // STUDENT_COURSE_H
