@@ -12,7 +12,8 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     this->setFixedSize(QSize(860, 490));
 
     //creates a new model
-    model = new QStringListModel(this);
+    studCourses = new QStringListModel(this);
+    courseList = new QStringListModel(this);
     QStringList studentList;
 
     //sets the current course list for the student
@@ -30,11 +31,11 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
         }
     }
 
-    model->setStringList(studentList);
+    studCourses->setStringList(studentList);
     courses.close();
 
     //sets the ui listview to the model
-    ui->listView->setModel(model);
+    ui->listView->setModel(studCourses);
 
     //prevents triggers on the model
     ui->listView->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -84,10 +85,10 @@ student_dashboard::~student_dashboard() {
 
 void student_dashboard::on_pushButton_3_clicked() {
     //add new course
-    int row = model->rowCount();
-    model->insertRows(row, 1);
+    int row = studCourses->rowCount();
+    studCourses->insertRows(row, 1);
 
-    QModelIndex index = model->index(row);
+    QModelIndex index = studCourses->index(row);
 
     ui->listView->setCurrentIndex(index);
     ui->listView->edit(index);
@@ -95,7 +96,7 @@ void student_dashboard::on_pushButton_3_clicked() {
 
 void student_dashboard::on_pushButton_2_clicked() {
     //delete selected course
-    model->removeRows(ui->listView->currentIndex().row(), 1);
+    studCourses->removeRows(ui->listView->currentIndex().row(), 1);
 }
 
 void student_dashboard::on_pushButton_4_clicked() {
