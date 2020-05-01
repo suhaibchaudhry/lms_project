@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "student_dashboard.h"
 #include "faculty_dashboard.h"
+#include "admin_dashboard.h"
 #include "edit_information.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +29,7 @@ private:
     //declares new instances of various windows to be used
     student_dashboard *stud_dboard;
     faculty_dashboard *fac_dboard;
+    admin_dashboard *adm_dboard;
     edit_information *edit_info;
 };
 #endif // MAINWINDOW_H

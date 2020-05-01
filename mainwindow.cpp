@@ -64,6 +64,9 @@ void MainWindow::on_loginButton_clicked() {
         } else if(user_check == "Teacher") {
             fac_dboard = new faculty_dashboard(this);
             fac_dboard->show();
+        }else if(user_check == "Admin") {
+            adm_dboard = new admin_dashboard(this);
+            adm_dboard->show();
         }
     } else {
         QMessageBox::information(this, "Login", "Username and password are wrong!");
