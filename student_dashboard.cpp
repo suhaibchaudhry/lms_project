@@ -9,7 +9,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     ui->setupUi(this);
 
     //sets a fixed size for the window
-    this->setFixedSize(QSize(860, 460));
+    this->setFixedSize(QSize(860, 490));
 
     //creates a new model
     model = new QStringListModel(this);
@@ -17,7 +17,6 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
 
     //sets the current course list for the student
     QString courseList = curr_path + user_id + "_courses.dat";
-    qDebug() << courseList;
     QFile courses(courseList);
 
     if(!courses.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -109,14 +108,13 @@ void student_dashboard::on_pushButton_4_clicked() {
 void student_dashboard::on_listView_clicked(const QModelIndex &index) {
     QModelIndex listIndex = ui->listView->currentIndex();
     student_selectedCourse = listIndex.data(Qt::DisplayRole).toString();
-
-    qDebug() << student_selectedCourse;
 }
 
 void student_dashboard::on_pushButton_clicked()
 {
     if(student_selectedCourse == "") {
         QMessageBox::critical(this, "Error", "Please select a course.");
+        return;
     } else {
         hide();
         stud_course = new student_course(this);
