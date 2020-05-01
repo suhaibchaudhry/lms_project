@@ -15,6 +15,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     studCourses = new QStringListModel(this);
     courseList = new QStringListModel(this);
     QStringList studentList;
+    QStringList full_courseList;
 
     //sets the current course list for the student
     QString courseList = curr_path + user_id + "_courses.dat";
@@ -28,6 +29,20 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
         while(!courses.atEnd()) {
             line = courses.readLine().trimmed();
             studentList << line;
+        }
+    }
+
+    QString courses_file = curr_path + user_id + "courseList.dat";
+    QFile fullCourses(courses_file);
+
+    if(!fullCourses.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "User Not Found");
+    } else {
+        QString line;
+
+        while(!fullCourses.atEnd()) {
+            line = fullCourses.readLine().trimmed();
+            full_courseList << line;
         }
     }
 
