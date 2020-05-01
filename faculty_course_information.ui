@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>course_information</class>
- <widget class="QDialog" name="course_information">
+ <class>faculty_course_information</class>
+ <widget class="QDialog" name="faculty_course_information">
   <property name="geometry">
    <rect>
     <x>0</x>
