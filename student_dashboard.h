@@ -6,6 +6,7 @@
 #include <QDialog>
 #include "edit_information.h"
 #include "student_course.h"
+#include "student_add_classes.h"
 
 namespace Ui {
 class student_dashboard;
@@ -34,11 +35,11 @@ private:
 
     //declared a new model for use in the student dashboard
     QStringListModel *studCourses;
-    QStringListModel *courseList;
 
     //declared a new instance of the edit_information window
     edit_information *edit_info;
     student_course *stud_course;
+    student_add_classes *stud_add_course;
 };
 
 #endif // STUDENT_DASHBOARD_H
