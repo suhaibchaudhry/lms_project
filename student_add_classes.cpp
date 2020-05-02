@@ -1,6 +1,8 @@
 #include "student_add_classes.h"
 #include "ui_student_add_classes.h"
 #include "variables.h"
+#include "mainwindow.h"
+#include "student_dashboard.h"
 #include <QFile>
 #include <QMessageBox>
 #include <QDebug>
@@ -55,4 +57,12 @@ void student_add_classes::on_pushButton_clicked() {
             myFile.close();
         }
     }
+
+    student_dashboard *stud_dboard = new student_dashboard(this);
+    stud_dboard->show();
+}
+
+void student_add_classes::on_pushButton_2_clicked() {
+    student_dashboard *stud_dboard = new student_dashboard(this);
+    stud_dboard->show();
 }
