@@ -92,14 +92,6 @@ void student_dashboard::on_pushButton_3_clicked() {
     hide();
     stud_add_course = new student_add_classes(this);
     stud_add_course->show();
-
-    /*int row = studCourses->rowCount();
-    studCourses->insertRows(row, 1);
-
-    QModelIndex index = studCourses->index(row);
-
-    ui->listView->setCurrentIndex(index);
-    ui->listView->edit(index);*/
 }
 
 void student_dashboard::on_pushButton_2_clicked() {
