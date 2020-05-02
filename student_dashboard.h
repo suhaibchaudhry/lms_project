@@ -40,6 +40,7 @@ private:
     edit_information *edit_info;
     student_course *stud_course;
     student_add_classes *stud_add_course;
+    student_dashboard *stud_dboard;
 };
 
 #endif // STUDENT_DASHBOARD_H
