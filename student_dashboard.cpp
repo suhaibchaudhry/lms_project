@@ -13,9 +13,9 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
 
     //creates a new model
     studCourses = new QStringListModel(this);
-    courseList = new QStringListModel(this);
+
     QStringList studentList;
-    QStringList full_courseList;
+
 
     //sets the current course list for the student
     QString courseList = curr_path + user_id + "_courses.dat";
@@ -32,19 +32,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
         }
     }
 
-    QString courses_file = curr_path + user_id + "courseList.dat";
-    QFile fullCourses(courses_file);
 
-    if(!fullCourses.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", "User Not Found");
-    } else {
-        QString line;
-
-        while(!fullCourses.atEnd()) {
-            line = fullCourses.readLine().trimmed();
-            full_courseList << line;
-        }
-    }
 
     studCourses->setStringList(studentList);
     courses.close();
@@ -100,13 +88,18 @@ student_dashboard::~student_dashboard() {
 
 void student_dashboard::on_pushButton_3_clicked() {
     //add new course
-    int row = studCourses->rowCount();
+
+    hide();
+    stud_add_course = new student_add_classes(this);
+    stud_add_course->show();
+
+    /*int row = studCourses->rowCount();
     studCourses->insertRows(row, 1);
 
     QModelIndex index = studCourses->index(row);
 
     ui->listView->setCurrentIndex(index);
-    ui->listView->edit(index);
+    ui->listView->edit(index);*/
 }
 
 void student_dashboard::on_pushButton_2_clicked() {
