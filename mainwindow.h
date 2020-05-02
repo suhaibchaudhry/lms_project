@@ -5,6 +5,8 @@
 #include "student_dashboard.h"
 #include "faculty_dashboard.h"
 #include "edit_information.h"
+#include "faculty_course_information.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,5 +31,6 @@ private:
     student_dashboard *stud_dboard;
     faculty_dashboard *fac_dboard;
     edit_information *edit_info;
+    faculty_course_information *course_info;
 };
 #endif // MAINWINDOW_H

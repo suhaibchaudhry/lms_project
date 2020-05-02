@@ -93,5 +93,4 @@ void student_dashboard::on_pushButton_4_clicked() {
      hide();
      edit_info = new edit_information(this);
      edit_info->show();
-
 }

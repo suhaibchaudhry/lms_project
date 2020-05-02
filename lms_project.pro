@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     edit_information.cpp \
+    faculty_course_information.cpp \
     faculty_dashboard.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     edit_information.h \
+    faculty_course_information.h \
     faculty_dashboard.h \
     mainwindow.h \
     student_dashboard.h \
@@ -32,6 +34,7 @@ HEADERS += \
 
 FORMS += \
     edit_information.ui \
+    faculty_course_information.ui \
     faculty_dashboard.ui \
     mainwindow.ui \
     student_dashboard.ui

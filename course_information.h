@@ -15,6 +15,9 @@ public:
     explicit course_information(QWidget *parent = nullptr);
     ~course_information();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::course_information *ui;
 };

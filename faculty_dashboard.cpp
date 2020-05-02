@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "faculty_dashboard.h"
 #include "ui_faculty_dashboard.h"
+#include <QString>
 
 faculty_dashboard::faculty_dashboard(QWidget *parent):QDialog(parent), ui(new Ui::faculty_dashboard) {
     ui->setupUi(this);
@@ -37,8 +38,12 @@ faculty_dashboard::~faculty_dashboard() {
 void faculty_dashboard::on_pushButton_clicked()
 {
     QModelIndex index = ui->listView->currentIndex();
-    QString itemText = index.data(Qt::DisplayRole).toString();
-    qDebug() << itemText;
+    selected_course = index.data(Qt::DisplayRole).toString();
+    qDebug() << selected_course;
+    hide();
+    faculty_course_info = new faculty_course_information(this);
+    faculty_course_info->show();
+
     //QString current = ui->listView->selectionModel()->selectedIndexes();
     //details
 }

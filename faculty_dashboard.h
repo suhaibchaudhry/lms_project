@@ -3,6 +3,8 @@
 #include <QtCore>
 #include <QtGui>
 #include <QDialog>
+#include "faculty_course_information.h"
+
 
 
 namespace Ui {
@@ -24,6 +26,9 @@ private:
     Ui::faculty_dashboard *ui;
     QStringListModel *model2;
     QStringList studentList;
+    QString selected_course;
+
+    faculty_course_information *faculty_course_info;
 };
 
 #endif // FACULTY_DASHBOARD_H
