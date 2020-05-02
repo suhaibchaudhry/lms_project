@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
+    <width>602</width>
     <height>495</height>
    </rect>
   </property>
@@ -67,13 +67,6 @@
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
        <string>Drop Course</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>Check Current GPA</string>
       </property>
      </widget>
     </item>
@@ -253,28 +246,10 @@
     </item>
    </layout>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>50</y>
-     <width>268</width>
-     <height>397</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Announcement List</string>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QListView" name="listView_2"/>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>260</x>
      <y>460</y>
      <width>75</width>
      <height>23</height>
