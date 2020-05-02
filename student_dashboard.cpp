@@ -9,7 +9,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     ui->setupUi(this);
 
     //sets a fixed size for the window
-    this->setFixedSize(QSize(860, 490));
+    this->setFixedSize(QSize(600, 490));
 
     //creates a new model
     studCourses = new QStringListModel(this);
@@ -96,7 +96,59 @@ void student_dashboard::on_pushButton_3_clicked() {
 
 void student_dashboard::on_pushButton_2_clicked() {
     //delete selected course
-    studCourses->removeRows(ui->listView->currentIndex().row(), 1);
+    //studCourses->removeRows(ui->listView->currentIndex().row(), 1);
+
+    //hide();
+
+    QString filename = curr_path + user_id + "_courses.dat";
+    QFile myFile(filename);
+
+    //open file as readable and writable
+    myFile.open(QIODevice::ReadWrite | QIODevice::Text);
+
+    //create new qbytearray to store filedata and store it as a qstring called text
+    QByteArray fileData = myFile.readAll();
+    QString text(fileData);
+
+    student_selectedCourse = student_selectedCourse + "\n";
+
+    qDebug() << "current text" << text;
+    qDebug() << "selected course name" << student_selectedCourse;
+
+    text.replace(QString(student_selectedCourse), QString(""));
+
+    qDebug() << "new text" << text.toUtf8();
+
+    myFile.resize(0);
+
+    QTextStream output(&myFile);
+    output << text;
+
+    myFile.close();
+
+    QStringList studentList;
+
+    QString courseList = curr_path + user_id + "_courses.dat";
+    QFile courses(courseList);
+
+    if(!courses.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "User Not Found");
+    } else {
+        QString line;
+
+        while(!courses.atEnd()) {
+            line = courses.readLine().trimmed();
+            studentList << line;
+        }
+    }
+
+
+
+    studCourses->setStringList(studentList);
+    courses.close();
+
+
+    //show();
 }
 
 void student_dashboard::on_pushButton_4_clicked() {
