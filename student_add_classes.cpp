@@ -10,14 +10,14 @@
 student_add_classes::student_add_classes(QWidget *parent):QDialog(parent), ui(new Ui::student_add_classes) {
     ui->setupUi(this);
 
-    //setWindowModality(Qt::ApplicationModal);
-
+    //created new stringlist for full list of courses
     courseList = new QStringListModel(this);
     QStringList full_courseList;
 
     QString courses_file = curr_path + "courseList.dat";
     QFile fullCourses(courses_file);
 
+    //opened file to check the full course list
     if(!fullCourses.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "User Not Found");
     } else {
@@ -29,6 +29,7 @@ student_add_classes::student_add_classes(QWidget *parent):QDialog(parent), ui(ne
         }
     }
 
+    //set the combobox to display the full list of courses
     courseList->setStringList(full_courseList);
     ui->comboBox->setModel(courseList);
 }
@@ -58,11 +59,13 @@ void student_add_classes::on_pushButton_clicked() {
         }
     }
 
+    hide();
     student_dashboard *stud_dboard = new student_dashboard(this);
     stud_dboard->show();
 }
 
 void student_add_classes::on_pushButton_2_clicked() {
+    hide();
     student_dashboard *stud_dboard = new student_dashboard(this);
     stud_dboard->show();
 }
