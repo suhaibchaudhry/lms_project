@@ -6,4 +6,3 @@ QString user_id = "";
 QString curr_path = "";
 QString student_selectedCourse = "";
 QString admin_selectedCourse = "";
->>>>>>> admin_dashboard
