@@ -163,7 +163,7 @@
   <widget class="QLabel" name="curr_grade">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>440</x>
      <y>270</y>
      <width>55</width>
      <height>16</height>
@@ -171,6 +171,19 @@
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>270</y>
+     <width>55</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Average:</string>
    </property>
   </widget>
  </widget>
