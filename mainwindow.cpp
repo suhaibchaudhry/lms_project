@@ -36,7 +36,7 @@ void MainWindow::on_loginButton_clicked() {
     //set variable user_check to match category of user
     QString user_check = ui->comboBox->currentText();
 
-    //open the file as readonly
+    //open the file as read-only
     if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "Authentication File Not Found");
     } else {

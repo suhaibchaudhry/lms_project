@@ -10,6 +10,7 @@
 #include "admin_add_course.h"
 #include "admineditinfo.h"
 #include "admin_add_student.h"
+#include "faculty_course_information.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,5 +41,6 @@ private:
     admin_add_course *admin_add;
     admineditinfo *admin_edit_student;
     admin_add_student *add_student;
+    faculty_course_information *course_info;
 };
 #endif // MAINWINDOW_H

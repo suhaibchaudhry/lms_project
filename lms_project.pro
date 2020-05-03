@@ -21,6 +21,7 @@ SOURCES += \
     admin_dashboard.cpp \
     admineditinfo.cpp \
     edit_information.cpp \
+    faculty_course_information.cpp \
     faculty_dashboard.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     admin_dashboard.h \
     admineditinfo.h \
     edit_information.h \
+    faculty_course_information.h \
     faculty_dashboard.h \
     mainwindow.h \
     student_add_classes.h \
@@ -48,6 +50,7 @@ FORMS += \
     admin_dashboard.ui \
     admineditinfo.ui \
     edit_information.ui \
+    faculty_course_information.ui \
     faculty_dashboard.ui \
     mainwindow.ui \
     student_add_classes.ui \

@@ -37,6 +37,12 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     studCourses->setStringList(studentList);
     courses.close();
 
+
+
+    //for (int i = 0; i < studentList.size(); ++i)
+    //         qDebug() << studentList.at(i).toLocal8Bit().constData() << Qt::endl;
+
+
     //sets the ui listview to the model
     ui->listView->setModel(studCourses);
 
@@ -47,7 +53,7 @@ student_dashboard::student_dashboard(QWidget *parent):QDialog(parent), ui(new Ui
     QString filename = curr_path + user_id + "_info.dat";
     QFile myFile(filename);
 
-    //opens file in readonly mode
+    //opens file in read-only mode
     if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "User Not Found");
     } else {
@@ -88,7 +94,6 @@ student_dashboard::~student_dashboard() {
 
 void student_dashboard::on_pushButton_3_clicked() {
     //add new course
-
     hide();
     stud_add_course = new student_add_classes(this);
     stud_add_course->show();
