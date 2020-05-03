@@ -17,7 +17,20 @@ public:
     ~admin_dashboard();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_addCourse_clicked();
+
+    void on_deleteCourse_clicked();
+
+    void on_activeCourses_clicked(const QModelIndex &index);
+
+    void on_activeStudents_clicked(const QModelIndex &index);
+
+    void on_editStudent_clicked();
+
+    void on_addStudent_clicked();
+
+    void on_deleteStudent_clicked();
 
 private:
     Ui::admin_dashboard *ui;
