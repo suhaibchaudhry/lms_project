@@ -1,7 +1,5 @@
-#include "edit_information.h"
-#include "ui_edit_information.h"
-#include "admin_dashboard.h"
-#include "ui_admin_dashboard.h"
+#include "admineditinfo.h"
+#include "ui_admineditinfo.h"
 #include "variables.h"
 #include "mainwindow.h"
 #include <QMessageBox>
@@ -12,50 +10,59 @@
 #include <QRegularExpressionMatch>
 #include <QRegularExpressionMatchIterator>
 
-edit_information::edit_information(QWidget *parent):QDialog(parent), ui(new Ui::edit_information) {
+admineditinfo::admineditinfo(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::admineditinfo)
+{
     ui->setupUi(this);
 
     //set file for student info
-    QString filename = curr_path + user_id + "_info.dat";
-    QFile myFile(filename);
+        QString filename = curr_path + user_id + "_info.dat";
+        QFile myFile(filename);
 
-    //open student info as file as read only
-    if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", "User Not Found");
-    } else {
-        //start reading line by line and set the variable line to next line from file
-        QTextStream stream(&myFile);
-        QString line = stream.readLine();
+        //open student info as file as read only
+        if(!myFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QMessageBox::critical(this, "Error", "User Not Found");
+        } else {
+            //start reading line by line and set the variable line to next line from file
+            QTextStream stream(&myFile);
+            QString line = stream.readLine();
 
-        //set the element placeholdertext to the line variable
-        ui->firstName->setPlaceholderText(line);
+            //set the element placeholdertext to the line variable
+            ui->firstName->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->lastName->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->lastName->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->address->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->address->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->city->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->city->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->state->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->state->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->zip->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->zip->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->dob->setPlaceholderText(line);
+            line = stream.readLine();
+            ui->dob->setPlaceholderText(line);
 
-        line = stream.readLine();
-        ui->phone->setPlaceholderText(line);
-    }
+            line = stream.readLine();
+            ui->phone->setPlaceholderText(line);
+        }
 
-    myFile.close();
+        myFile.close();
 }
 
-void edit_information::on_pushButton_clicked() {
+admineditinfo::~admineditinfo()
+{
+    delete ui;
+}
+
+void admineditinfo::on_pushButton_clicked()
+{
     QString filename = curr_path + user_id + "_info.dat";
     QFile myFile(filename);
 
@@ -178,20 +185,13 @@ void edit_information::on_pushButton_clicked() {
     myFile.close();
 
     hide();
-
-    //starts new instance of student dashboard with updated information
-    student_dashboard *stud_dboard = new student_dashboard(this);
-    stud_dboard->show();
+    admin_dashboard *admin_dboard = new admin_dashboard(this);
+    admin_dboard->show();
 }
 
-edit_information::~edit_information() {
-    delete ui;
-}
-
-void edit_information::on_pushButton_2_clicked() {
+void admineditinfo::on_pushButton_2_clicked()
+{
     hide();
-
-    //starts new instance of student dashboard without information change
-    student_dashboard *stud_dboard = new student_dashboard(this);
-    stud_dboard->show();
+    admin_dashboard *admin_dboard = new admin_dashboard(this);
+    admin_dboard->show();
 }

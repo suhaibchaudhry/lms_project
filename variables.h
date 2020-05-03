@@ -11,5 +11,6 @@ QT_END_NAMESPACE
 extern QString user_id;
 extern QString curr_path;
 extern QString student_selectedCourse;
+extern QString admin_selectedCourse;
 
 #endif // VARIABLES_H
