@@ -16,6 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admin_add_course.cpp \
+    admin_add_student.cpp \
     admin_dashboard.cpp \
     admineditinfo.cpp \
     edit_information.cpp \
@@ -26,6 +28,8 @@ SOURCES += \
     variables.cpp
 
 HEADERS += \
+    admin_add_course.h \
+    admin_add_student.h \
     admin_dashboard.h \
     admineditinfo.h \
     edit_information.h \
@@ -35,6 +39,8 @@ HEADERS += \
     variables.h
 
 FORMS += \
+    admin_add_course.ui \
+    admin_add_student.ui \
     admin_dashboard.ui \
     admineditinfo.ui \
     edit_information.ui \
