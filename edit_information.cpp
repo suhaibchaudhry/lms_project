@@ -1,5 +1,7 @@
 #include "edit_information.h"
 #include "ui_edit_information.h"
+#include "admin_dashboard.h"
+#include "ui_admin_dashboard.h"
 #include "variables.h"
 #include "mainwindow.h"
 #include <QMessageBox>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>371</height>
+    <width>626</width>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,6 +24,91 @@
    </property>
    <property name="text">
     <string>ADMIN DASHBOARD</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addCourse">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>270</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Course</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="activeCourses">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListView" name="activeStudents">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>70</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteCourse">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>311</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Course</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editStudent">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>270</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit Student</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addStudent">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>310</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Student</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteStudent">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>350</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Student</string>
    </property>
   </widget>
  </widget>
