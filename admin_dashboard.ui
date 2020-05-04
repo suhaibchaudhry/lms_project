@@ -6,41 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>389</height>
+    <width>571</width>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Admin Dashboard</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>521</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>ADMIN DASHBOARD</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>350</y>
+     <x>250</x>
+     <y>370</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -49,61 +26,96 @@
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>44</y>
-     <width>524</width>
-     <height>283</height>
+     <x>0</x>
+     <y>9</y>
+     <width>564</width>
+     <height>353</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QListView" name="activeCourses"/>
-      </item>
-      <item>
-       <widget class="QPushButton" name="addCourse">
-        <property name="text">
-         <string>Add Course</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="deleteCourse">
-        <property name="text">
-         <string>Delete Course</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>ADMIN DASHBOARD</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QListView" name="activeStudents"/>
-      </item>
-      <item>
-       <widget class="QPushButton" name="editStudent">
-        <property name="text">
-         <string>Edit Student</string>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Course List</string>
         </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QListView" name="activeCourses"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addCourse">
+           <property name="text">
+            <string>Add Course</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteCourse">
+           <property name="text">
+            <string>Delete Course</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="addStudent">
-        <property name="text">
-         <string>Add Student</string>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Students List</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="deleteStudent">
-        <property name="text">
-         <string>Delete Student</string>
-        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QListView" name="activeStudents"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="editStudent">
+             <property name="text">
+              <string>Edit Student</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addStudent">
+             <property name="text">
+              <string>Add Student</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="deleteStudent">
+             <property name="text">
+              <string>Delete Student</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
